@@ -65,9 +65,9 @@ nav a:hover{background:var(--line2);color:var(--ink)}
 .hero .cta{margin-top:clamp(24px,3vw,44px)}
 .cta{display:flex;gap:12px;flex-wrap:wrap}
 .scene{position:relative;isolation:isolate;overflow:hidden;aspect-ratio:16/9;max-width:1536px;margin:clamp(40px,5.55vw,84px) auto 0;width:calc(100% - clamp(32px,5.55vw,80px));background:#334733;border-radius:10px;color:#fff}
-.scene img{display:block;width:100%;height:100%;object-fit:cover;object-position:58% 50%}
+.scene img{display:block;width:100%;height:100%;object-fit:cover;object-position:45% 66%}
 .scene-status,.scene figcaption{position:absolute;z-index:1;background:#18241de8;border:1px solid #b4ccb078;border-radius:999px;padding:7px 12px}
-.scene-status{top:54%;right:10%;font:400 clamp(11px,1vw,14px)/1.4 var(--mono)}
+.scene-status{top:16px;right:16px;font:400 clamp(11px,1vw,14px)/1.4 var(--mono)}
 .scene-status::before{content:"";display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%;background:var(--brand)}
 .scene figcaption{left:16px;bottom:16px;font-size:12px}
 .hero-summary{padding:clamp(48px,7vw,105px) 0 clamp(56px,8vw,120px)}
@@ -97,6 +97,7 @@ section{padding:110px 0}
 .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .card{min-width:0;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .viz{height:272px;background:#e2eedc;padding:18px;display:flex;align-items:center;justify-content:center}
+.card-photo{display:block;width:100%;height:272px;object-fit:cover;background:#e2eedc}
 .card .body{padding:24px}
 .card .body p{color:var(--ink2);font-size:15px;margin-top:10px}
 @media(max-width:830px){.cases{grid-template-columns:1fr}}
@@ -110,15 +111,6 @@ section{padding:110px 0}
 .chip{display:inline-flex;gap:6px;align-items:center;font-family:var(--mono);font-size:11px;padding:5px 10px;border-radius:99px;background:#ece9e7;transition:.3s}
 .chip.on{background:var(--brand-l);color:var(--brand-d)}
 .chip::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
-
-/* house */
-.house{width:100%;max-width:300px}
-.house text{font-family:var(--mono);font-size:10.5px;fill:var(--ink)}
-.flow{stroke:var(--brand-d);stroke-width:2;fill:none;stroke-dasharray:4 6}
-
-/* Homes form a single dispatch group. */
-.pool{width:min(100%,226px);aspect-ratio:1;display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle,transparent 46%,#97ba8a 46.5% 47%,transparent 47.5% 64%,#adcaa2 64.5% 65%,transparent 65.5%)}
-.pool .core{display:grid;place-items:center;width:46%;aspect-ratio:1;border:1px solid var(--brand-d);border-radius:50%;font:400 11px var(--mono);background:var(--brand-l)}
 
 /* case */
 .case{display:grid;grid-template-columns:1.1fr 1fr;background:var(--brand);border-radius:28px;overflow:hidden;min-height:380px}
@@ -165,7 +157,7 @@ footer a:hover{color:var(--brand)}
     <div class="cta"><a class="btn p" href="#contact">About this demo</a><a class="btn g" href="#platform">Explore the platform</a></div>
   </div>
   <figure class="scene">
-    <img src="solar-home.svg" width="1440" height="810" alt="A charcoal roof with solar panels in a pine forest" fetchpriority="high">
+    <img src="solar-home.webp" width="1600" height="1066" alt="Rooftop solar panels overlooking a tree-lined hillside neighborhood" fetchpriority="high">
     <span class="scene-status">Solar output · 4.2 kW</span>
     <figcaption>Illustrative home energy data</figcaption>
   </figure>
@@ -204,21 +196,11 @@ footer a:hover{color:var(--brand)}
       <div class="body"><h3>EV charging</h3><p>Move charging to the cheapest hours before the driver’s departure.</p></div>
     </article>
     <article class="card">
-      <div class="viz"><svg class="house" viewBox="0 0 300 230">
-        <path d="M40 120 L150 40 L260 120 V200 H40 Z" fill="#fff" stroke="#151413" stroke-width="2.5" stroke-linejoin="round"/>
-        <path d="M70 100 L150 42 L230 100" fill="none" stroke="#3f7d2c" stroke-width="9" stroke-linecap="round"/>
-        <rect x="64" y="150" width="46" height="50" rx="5" fill="#e4fed2" stroke="#151413" stroke-width="2"/>
-        <rect x="190" y="160" width="58" height="26" rx="8" fill="#ece9e7" stroke="#151413" stroke-width="2"/>
-        <circle cx="203" cy="190" r="5" fill="#151413"/><circle cx="236" cy="190" r="5" fill="#151413"/>
-        <path class="flow" d="M150 52 V120 M150 120 H87 V150 M150 120 H220 V160"/>
-        <text x="158" y="30" id="t1">SOLAR 4.2 kW</text>
-        <text x="48" y="218" id="t2">BATT +2.1 kW</text>
-        <text x="190" y="218" id="t3">EV 3.6 kW</text>
-      </svg></div>
+      <img class="card-photo" src="home-energy.webp" width="840" height="560" alt="A house with rooftop solar panels behind a garden" loading="lazy" decoding="async">
       <div class="body"><h3>Home energy</h3><p>Coordinate solar, battery storage and charging around household needs and electricity prices.</p></div>
     </article>
     <article class="card">
-      <div class="viz"><div class="pool" aria-hidden="true"><div class="core">One resource</div></div></div>
+      <img class="card-photo" src="solar-neighborhood.webp" width="840" height="630" alt="Aerial view of a neighborhood with solar panels on several roofs" loading="lazy" decoding="async">
       <div class="body"><h3>Dispatchable flexibility</h3><p>Dispatch a group of homes as one resource for day-ahead planning and grid balancing.</p></div>
     </article>
   </div>
